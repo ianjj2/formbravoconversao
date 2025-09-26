@@ -114,7 +114,7 @@ const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 1. **Teste o formulário:** Preencha com dados válidos
 2. **Verifique no Supabase:** Dados devem aparecer na tabela
 3. **Teste validações:** CPF inválido deve ser rejeitado
-4. **CSV Download:** Deve baixar arquivo automaticamente
+4. **Mensagem de sucesso:** Deve exibir confirmação de cadastro
 
 ## 🚨 Troubleshooting
 

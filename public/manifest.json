@@ -1,0 +1,26 @@
+{
+  "name": "Conversão Digital 2025 - BRAVO BET",
+  "short_name": "Conversão Digital",
+  "description": "Cadastre-se no maior evento de conversão digital do Brasil",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a202c",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/bravo-bet-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "categories": ["business", "education", "productivity"]
+}

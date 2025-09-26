@@ -63,25 +63,6 @@ export default function ContactForm() {
     return numbers.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
   };
 
-  const downloadCSV = (data: FormData) => {
-    const csvContent = [
-      "Nome,CPF,Telefone,Email,Data/Hora",
-      `"${data.name}","${data.cpf}","${data.phone}","${data.email}","${new Date().toLocaleString('pt-BR')}"`,
-    ].join('\n');
-
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    
-    if (link.download !== undefined) {
-      const url = URL.createObjectURL(blob);
-      link.setAttribute('href', url);
-      link.setAttribute('download', `cadastro-conversao-digital-${Date.now()}.csv`);
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
@@ -101,21 +82,18 @@ export default function ContactForm() {
       if (error) {
         throw error;
       }
-
-      // Still download CSV for backup
-      downloadCSV(data);
       
       toast({
-        title: "Cadastro realizado com sucesso!",
-        description: `Parabéns, ${data.name}! Sua vaga no evento Conversão Digital foi reservada e os dados foram salvos no banco de dados.`,
+        title: "🎉 Cadastro realizado com sucesso!",
+        description: `Parabéns, ${data.name}! Sua vaga no evento Conversão Digital foi reservada. Você receberá mais informações em breve.`,
       });
       
       reset();
     } catch (error) {
       console.error('Error saving registration:', error);
       toast({
-        title: "Erro ao enviar formulário",
-        description: "Tente novamente em alguns minutos.",
+        title: "❌ Erro ao enviar formulário",
+        description: "Ocorreu um erro ao processar seu cadastro. Tente novamente em alguns minutos.",
         variant: "destructive",
       });
     } finally {

@@ -1,7 +1,16 @@
+# Robots.txt - Conversão Digital 2025 BRAVO BET
+
+User-agent: *
+Allow: /
+
+# Permitir todos os crawlers principais
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +19,13 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Bloquear áreas administrativas (se houver)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_netlify/
+
+# Sitemap
+Sitemap: https://conversao-digital.bravobet.com/sitemap.xml
+
+# Crawl-delay (opcional)
+Crawl-delay: 1
